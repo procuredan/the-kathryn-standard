@@ -558,8 +558,17 @@ a {
 }
 /* Force header + nav above any overlays */
 .site-header {
+  .main-nav,
+.main-nav a {
+  position: relative;
+  z-index: 999999;
+}
   position: relative;
   z-index: 99999;
+}
+main {
+  position: relative;
+  z-index: 1;
 }
 
 .main-nav,
