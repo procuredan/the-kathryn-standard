@@ -556,3 +556,20 @@ a {
 .site-header * {
   pointer-events: auto;
 }
+/* Force header + nav above any overlays */
+.site-header {
+  position: relative;
+  z-index: 99999;
+}
+
+.main-nav,
+.main-nav a {
+  position: relative;
+  z-index: 999999;
+}
+
+/* Prevent main content from ever covering the header */
+main {
+  position: relative;
+  z-index: 1;
+}
