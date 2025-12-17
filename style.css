@@ -547,3 +547,12 @@ a {
   letter-spacing: 0.02em;
   color: var(--accent-dark, #855b3a);
 }
+/* Ensure header is always clickable above layered sections */
+.site-header {
+  position: relative;
+  z-index: 9999;
+}
+
+.site-header * {
+  pointer-events: auto;
+}
