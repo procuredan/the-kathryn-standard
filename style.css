@@ -589,6 +589,7 @@ main {
   font-size: clamp(2.6rem, 5vw, 3.8rem);
   line-height: 1.05;
   margin: 0 0 1.25rem;
+  text-align: center;
 }
 
 .brand-line {
