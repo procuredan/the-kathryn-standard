@@ -601,3 +601,8 @@ main {
   letter-spacing: 0.28em;
   margin-bottom: 0.15em;
 }
+/* Optical width balance for KATHRYN */
+.brand-kathryn {
+  font-size: 1.14em;
+  letter-spacing: 0.26em;
+}
