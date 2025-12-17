@@ -595,4 +595,9 @@ main {
 .brand-line {
   display: block;
 }
+/* Refine THE line */
+.brand-the {
+  font-size: 0.7em;
+  letter-spacing: 0.45em;
+  margin-bottom: 0.15em;
 }
