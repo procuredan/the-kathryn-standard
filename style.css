@@ -17,6 +17,16 @@
   --font-sans: "DM Sans", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   --font-serif: "Playfair Display", "Times New Roman", serif;
 }
+.standard-subhead{
+  margin-top: 28px;
+  margin-bottom: 10px;
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #2b2522;
+}
 
 /* RESET & BASE */
 
