@@ -616,3 +616,51 @@ main {
   font-size: 1.14em;
   letter-spacing: 0.24em;
 }
+/* ============================
+   Perspective / Longform
+============================ */
+
+.perspective {
+  font-family: Georgia, serif;
+}
+
+.perspective h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 42px;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 24px;
+}
+
+.perspective .intro {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.perspective p {
+  font-size: 17px;
+  line-height: 1.75;
+  margin-bottom: 24px;
+  color: #222;
+}
+
+.perspective p strong {
+  font-weight: 600;
+}
+
+.perspective p br {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.perspective a {
+  text-decoration: none;
+  color: #b28a63;
+  font-size: 15px;
+}
+
+.perspective a:hover {
+  text-decoration: underline;
+}
