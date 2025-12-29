@@ -667,3 +667,8 @@ main {
 body {
   background-color: #faf8f6;
 }
+.ml-embedded {
+  display: block !important;
+  min-height: 180px;
+  background: #ffffff;
+}
