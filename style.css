@@ -672,3 +672,12 @@ body {
   min-height: 180px;
   background: #ffffff;
 }
+.substack-embed{
+  max-width: 520px;
+  margin: 24px auto 0;
+}
+
+.substack-embed iframe{
+  width: 100%;
+  border-radius: 18px;
+}
