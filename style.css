@@ -686,3 +686,15 @@ body {
   width: 100%;
   border-radius: 18px;
 }
+/* Welcome page: make list text match body copy */
+.welcome-body,
+.welcome-body p,
+.welcome-body ul,
+.welcome-body ol,
+.welcome-body li {
+  color: #6e6154;
+}
+
+.welcome-body li::marker {
+  color: #6e6154;
+}
