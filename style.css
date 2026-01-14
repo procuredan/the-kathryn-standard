@@ -524,6 +524,9 @@ a {
   line-height: 1.9;
   margin: 0 0 1.2rem;
 }
+.welcome-body li {
+  color: inherit;
+}
 
 .welcome-subhead {
   font-family: var(--font-serif, "Playfair Display", serif);
