@@ -1,1 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>The Performance Standard | The Kathryn Standard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="The Performance Standard — systems, discipline, and capacity that sustain leadership over time."
+  />
 
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=DM+Sans:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand" aria-label="The Kathryn Standard home">
+        <img
+          src="/assets/logo.png"
+          alt="The Kathryn Standard logo"
+          class="logo"
+        />
+      </a>
+
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a href="/about">About</a>
+        <a href="/#standards">The Standards</a>
+        <a href="/work-with">Work With Kathryn</a>
+        <a href="https://perspective.thekathrynstandard.com" class="nav-cta">
+          Perspective
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main>
+    <section class="section">
+      <div class="container">
+        <p class="welcome-kicker">The Standards</p>
+
+        <h1 class="standard-title">The Performance Standard</h1>
+
+        <div class="welcome-card">
+          <p>
+            Performance is not about doing more.
+            <br />
+            It’s about sustaining excellence without collapse.
+          </p>
+
+          <p>
+            This category explores the systems, disciplines, and personal
+            protocols that allow leaders to operate with energy, focus, and
+            resilience over the long term.
+          </p>
+
+          <p>
+            Articles examine health, strength, cognition, recovery, and
+            decision-making capacity — not as lifestyle content, but as
+            leadership infrastructure.
+          </p>
+
+          <p>
+            Because ambition without capacity is a liability.
+          </p>
+
+          <p>
+            This is not fitness culture or biohacking for sport.
+            <br />
+            It is performance in service of responsibility.
+          </p>
+        </div>
+
+        <div class="standard-nav">
+          <a
+            href="https://perspective.thekathrynstandard.com"
+            target="_blank"
+            rel="noopener"
+          >
+            → All essays are published on Substack
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> The Kathryn Standard. All rights reserved.</p>
+
+      <p class="footer-small">
+        The Kathryn Standard shares educational content only and does not
+        provide medical, diagnostic, or treatment advice.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    const yearEl = document.getElementById("year");
+    if (yearEl) {
+      yearEl.textContent = new Date().getFullYear();
+    }
+  </script>
+</body>
+</html>
