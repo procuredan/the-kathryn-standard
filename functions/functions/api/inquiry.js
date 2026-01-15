@@ -1,3 +1,5 @@
+form index has this code
+
 export async function onRequestPost(context) {
   const { request, env } = context;
 
@@ -47,10 +49,10 @@ export async function onRequestPost(context) {
   // Insert into D1
   try {
     await env.INQUIRIES_DB.prepare(
-      `INSERT INTO inquiries
+      INSERT INTO inquiries
         (created_at, name, email, company, title, context, prompt, areas_json, areas_other, source, notes, ip, user_agent)
        VALUES
-        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     )
       .bind(
         new Date().toISOString(),
