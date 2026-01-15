@@ -68,9 +68,6 @@ try {
       userAgent
     )
     .run();
-} catch (e) {
-  return json({ error: "Database error. Please try again." }, 500);
-}
   } catch (e) {
     return json({ error: "Database error. Please try again." }, 500);
   }
