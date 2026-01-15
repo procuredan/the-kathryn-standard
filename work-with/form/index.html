@@ -100,18 +100,30 @@
     </section>
   </main>
 
-  <script>
+ <script>
+  (function () {
     const form = document.getElementById("inquiry-form");
     const msg = document.getElementById("form-message");
 
+    if (!form) {
+      console.error("Inquiry form not found");
+      return;
+    }
+    if (!msg) {
+      console.error("Message element not found");
+      return;
+    }
+
     function getChecked(name) {
-      return Array.from(document.querySelectorAll(`input[name="${name}"]:checked`))
-        .map(i => i.value);
+      return Array.from(document.querySelectorAll(`input[name="${name}"]:checked`)).map(i => i.value);
     }
 
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
+      e.stopPropagation();
+
       msg.textContent = "";
+      console.log("Form submit intercepted");
 
       const areas = getChecked("areas");
       if (areas.length > 3) {
@@ -119,7 +131,12 @@
         return;
       }
 
-      const data = Object.fromEntries(new FormData(form).entries());
+      // Build JSON payload
+      const fd = new FormData(form);
+
+      // IMPORTANT: FormData turns checkboxes into multiple entries;
+      // we handle areas separately so we don’t get weird overwrites.
+      const data = Object.fromEntries(fd.entries());
       data.areas = areas;
 
       try {
@@ -133,16 +150,20 @@
 
         if (!res.ok) {
           msg.textContent = out.error || "Something went wrong. Please try again.";
+          console.error("API error", out);
           return;
         }
 
         form.reset();
         msg.textContent =
           "Thank you for your inquiry. If there appears to be alignment, you’ll be contacted to explore next steps.";
+        console.log("Success");
       } catch (err) {
+        console.error(err);
         msg.textContent = "Network error. Please try again.";
       }
     });
-  </script>
+  })();
+</script>
 </body>
 </html>
