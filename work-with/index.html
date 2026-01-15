@@ -15,7 +15,7 @@
       <nav class="main-nav" aria-label="Primary navigation">
         <a href="/#about">About</a>
         <a href="/#standards">The Standards</a>
-       <a href="/work-with/">Work with Kathryn</a>
+        <a href="/work-with/">Work with Kathryn</a>
         <a href="https://perspective.thekathrynstandard.com" class="nav-cta" target="_blank" rel="noopener noreferrer">Perspective</a>
       </nav>
     </div>
@@ -67,10 +67,11 @@
             <label><input type="checkbox" name="areas" value="Governance, boards, or organizational structure"> Governance, boards, or organizational structure</label>
             <label><input type="checkbox" name="areas" value="Boundaries, capacity, and sustainability"> Boundaries, capacity, and sustainability</label>
             <label><input type="checkbox" name="areas" value="Strategy during transition or growth"> Strategy during transition or growth</label>
-            <label>
+
+            <label style="margin-top: .6rem;">
               <input type="checkbox" name="areas" value="Other"> Other (explain)
-              <input type="text" name="areas_other" placeholder="Optional" />
             </label>
+            <input type="text" name="areas_other" placeholder="Optional" />
           </fieldset>
 
           <fieldset>
@@ -123,7 +124,7 @@
           body: JSON.stringify(data)
         });
 
-        const out = await res.json();
+        const out = await res.json().catch(() => ({}));
         if (!res.ok) {
           msg.textContent = out.error || "Something went wrong. Please try again.";
           return;
