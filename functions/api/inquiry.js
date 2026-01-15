@@ -46,11 +46,28 @@ export async function onRequestPost(context) {
 
   // Insert into D1
   try {
-    await env.INQUIRIES_DB.prepare(
-      INSERT INTO inquiries
-        (created_at, name, email, company, title, context, prompt, areas_json, areas_other, source, notes, ip, user_agent)
-       VALUES
-        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    await env.DB.prepare(`
+  INSERT INTO inquiries
+    (created_at, name, email, company, title, context, prompt, areas_json, areas_other, source, notes, ip, user_agent)
+  VALUES
+    (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+`)
+  .bind(
+    new Date().toISOString(),
+    name,
+    email,
+    company,
+    title,
+    contextText,
+    prompt,
+    JSON.stringify(areas),
+    areasOther,
+    source,
+    notes,
+    ip,
+    userAgent
+  )
+  .run();
     )
       .bind(
         new Date().toISOString(),
