@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Work With Kathryn — Pre-Qualification Form</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand" aria-label="The Kathryn Standard home">
+        <img src="/assets/logo.png" alt="The Kathryn Standard logo" class="logo" />
+      </a>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a href="/#about">About</a>
+        <a href="/#standards">The Standards</a>
+        <a href="/#work-with">Work with Kathryn</a>
+        <a href="https://perspective.thekathrynstandard.com" class="nav-cta" target="_blank" rel="noopener noreferrer">Perspective</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container" style="max-width: 760px;">
+        <div class="section-header">
+          <h1>Work With Kathryn — Pre-Qualification Form</h1>
+          <p>This form is a starting point for thoughtful introductions. It is not a commitment.</p>
+        </div>
+
+        <form id="inquiry-form" class="form-card">
+          <label>
+            1. Name
+            <input type="text" name="name" required />
+          </label>
+
+          <label>
+            2. Email
+            <input type="email" name="email" required />
+          </label>
+
+          <label>
+            3. Organization / Company
+            <input type="text" name="company" />
+          </label>
+
+          <label>
+            4. Current Role/Title
+            <input type="text" name="title" />
+          </label>
+
+          <label>
+            5. Briefly describe the leadership context you’re navigating right now.
+            <textarea name="context" rows="4" required></textarea>
+          </label>
+
+          <label>
+            6. What prompted you to reach out at this moment?
+            <textarea name="prompt" rows="3" required></textarea>
+          </label>
+
+          <fieldset>
+            <legend>7. Which areas feel most relevant to the work you’re seeking? (Select up to 3)</legend>
+            <label><input type="checkbox" name="areas" value="Executive judgment & decision-making"> Executive judgment & decision-making</label>
+            <label><input type="checkbox" name="areas" value="Leadership presence & authority"> Leadership presence & authority</label>
+            <label><input type="checkbox" name="areas" value="Governance, boards, or organizational structure"> Governance, boards, or organizational structure</label>
+            <label><input type="checkbox" name="areas" value="Boundaries, capacity, and sustainability"> Boundaries, capacity, and sustainability</label>
+            <label><input type="checkbox" name="areas" value="Strategy during transition or growth"> Strategy during transition or growth</label>
+            <label>
+              <input type="checkbox" name="areas" value="Other"> Other (explain)
+              <input type="text" name="areas_other" placeholder="Optional" />
+            </label>
+          </fieldset>
+
+          <fieldset>
+            <legend>8. How did you find your way to my work?</legend>
+            <label><input type="radio" name="source" value="Substack essays" required> Substack essays</label>
+            <label><input type="radio" name="source" value="The Kathryn Standard website"> The Kathryn Standard website</label>
+            <label><input type="radio" name="source" value="Referral"> Referral</label>
+            <label><input type="radio" name="source" value="Other"> Other</label>
+          </fieldset>
+
+          <label>
+            9. Is there anything else that would be helpful to know at this stage?
+            <textarea name="notes" rows="3"></textarea>
+          </label>
+
+          <p class="footer-small">Not all inquiries result in an engagement.</p>
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+          <p id="form-message" class="form-message" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const form = document.getElementById("inquiry-form");
+    const msg = document.getElementById("form-message");
+
+    function getChecked(name) {
+      return Array.from(document.querySelectorAll(`input[name="${name}"]:checked`)).map(i => i.value);
+    }
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      msg.textContent = "";
+
+      const areas = getChecked("areas");
+      if (areas.length > 3) {
+        msg.textContent = "Please select up to 3 areas.";
+        return;
+      }
+
+      const data = Object.fromEntries(new FormData(form).entries());
+      data.areas = areas;
+
+      try {
+        const res = await fetch("/api/inquiry", {
+          method: "POST",
+          headers: {"Content-Type":"application/json"},
+          body: JSON.stringify(data)
+        });
+
+        const out = await res.json();
+        if (!res.ok) {
+          msg.textContent = out.error || "Something went wrong. Please try again.";
+          return;
+        }
+
+        form.reset();
+        msg.textContent = "Thank you for your inquiry. If there appears to be alignment, you’ll be contacted to explore next steps.";
+      } catch (err) {
+        msg.textContent = "Network error. Please try again.";
+      }
+    });
+  </script>
+</body>
+</html>
