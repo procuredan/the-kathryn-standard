@@ -45,46 +45,32 @@ export async function onRequestPost(context) {
   const userAgent = request.headers.get("user-agent") || "";
 
   // Insert into D1
-  try {
-    await env.DB.prepare(`
-  INSERT INTO inquiries
-    (created_at, name, email, company, title, context, prompt, areas_json, areas_other, source, notes, ip, user_agent)
-  VALUES
-    (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-`)
-  .bind(
-    new Date().toISOString(),
-    name,
-    email,
-    company,
-    title,
-    contextText,
-    prompt,
-    JSON.stringify(areas),
-    areasOther,
-    source,
-    notes,
-    ip,
-    userAgent
-  )
-  .run();
+try {
+  await env.DB.prepare(`
+    INSERT INTO inquiries
+      (created_at, name, email, company, title, context, prompt, areas_json, areas_other, source, notes, ip, user_agent)
+    VALUES
+      (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+  `)
+    .bind(
+      new Date().toISOString(),
+      name,
+      email,
+      company,
+      title,
+      contextText,
+      prompt,
+      JSON.stringify(areas),
+      areasOther,
+      source,
+      notes,
+      ip,
+      userAgent
     )
-      .bind(
-        new Date().toISOString(),
-        name,
-        email,
-        company,
-        title,
-        contextText,
-        prompt,
-        JSON.stringify(areas),
-        areasOther,
-        source,
-        notes,
-        ip,
-        userAgent
-      )
-      .run();
+    .run();
+} catch (e) {
+  return json({ error: "Database error. Please try again." }, 500);
+}
   } catch (e) {
     return json({ error: "Database error. Please try again." }, 500);
   }
