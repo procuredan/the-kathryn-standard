@@ -523,6 +523,14 @@ a {
   line-height: 1.35;
   color: var(--text);
 }
+/* Make ALL question text match (Q1–Q9 + fieldset labels) */
+.form-card label,
+.form-card .fieldset-label {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.35;
+}
 
 /* Kill the default “legend cuts the border” behavior */
 .form-card fieldset > legend {
