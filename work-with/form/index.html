@@ -155,10 +155,7 @@
           return;
         }
 
-        form.reset();
-        msg.textContent =
-          "Thank you for your inquiry. If there appears to be alignment, you’ll be contacted to explore next steps.";
-        console.log("Success");
+        window.location.href = "/work-with/thank-you/";
       } catch (err) {
         console.error(err);
         msg.textContent = "Network error. Please try again.";
