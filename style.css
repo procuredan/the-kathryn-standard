@@ -460,11 +460,6 @@ a {
   margin-bottom: 1.75rem;
 }
 
-.form-card legend {
-  font-weight: 500;
-  padding: 0 0.4rem;
-}
-
 .form-card fieldset label {
   display: block;
   font-weight: normal;
