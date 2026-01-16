@@ -425,6 +425,70 @@ a {
   font-size: 0.82rem;
   min-height: 1.1rem;
 }
+.form-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 2.5rem 2.75rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+  margin-top: 2rem;
+}
+.form-card label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 1.25rem;
+}
+
+.form-card input[type="text"],
+.form-card input[type="email"],
+.form-card textarea {
+  width: 100%;
+  margin-top: 0.4rem;
+  padding: 0.65rem 0.75rem;
+  font-size: 0.95rem;
+  border: 1px solid #d9d6d2;
+  border-radius: 8px;
+  background: #fff;
+}
+.form-card textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+.form-card fieldset {
+  border: 1px solid #e4e1dd;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.75rem;
+}
+
+.form-card legend {
+  font-weight: 500;
+  padding: 0 0.4rem;
+}
+
+.form-card fieldset label {
+  display: block;
+  font-weight: normal;
+  margin: 0.5rem 0;
+}
+.btn-primary {
+  background: #c9a36a;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.6rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: #b18f5b;
+}
+.footer-small {
+  font-size: 0.8rem;
+  color: #8a857f;
+  margin-top: 1.5rem;
+}
 
 /* FOOTER */
 
