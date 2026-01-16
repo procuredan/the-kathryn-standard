@@ -503,22 +503,30 @@ a {
   }
 }
 /* Fieldsets (Questions 7 + 8) */
-
 .form-card fieldset {
   border: 1px solid rgba(0,0,0,0.10);
   border-radius: 14px;
-  padding: 1.1rem 1.1rem 1rem;
-  margin: 1.25rem 0;
+  padding: 1.25rem 1.25rem 1rem;
+  margin: 1.5rem 0;
   background: #fff;
+  min-width: 0;
 }
 
+/* Question text ABOVE the box */
 .form-card legend {
+  display: block;
+  width: 100%;
   padding: 0;
   margin: 0 0 0.85rem 0;
   font-weight: 600;
   font-size: 0.95rem;
   line-height: 1.35;
   color: var(--text);
+}
+
+/* Kill the default “legend cuts the border” behavior */
+.form-card fieldset > legend {
+  float: none;
 }
 
 /* Remove the weird “legend cuts the border” look */
