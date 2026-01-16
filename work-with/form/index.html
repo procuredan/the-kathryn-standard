@@ -67,28 +67,33 @@
   </div>
 
   <!-- keep your fieldset 7, fieldset 8, question 9, disclaimer, submit button, etc. below -->
+         <fieldset>
+  <legend>7. Which areas feel most relevant to the work you’re seeking? (Select up to 3)</legend>
+
+  <div class="option-grid">
+    <label><input type="checkbox" name="areas" value="Executive judgment & decision-making"> Executive judgment & decision-making</label>
+    <label><input type="checkbox" name="areas" value="Leadership presence & authority"> Leadership presence & authority</label>
+    <label><input type="checkbox" name="areas" value="Governance, boards, or organizational structure"> Governance, boards, or organizational structure</label>
+    <label><input type="checkbox" name="areas" value="Boundaries, capacity, and sustainability"> Boundaries, capacity, and sustainability</label>
+    <label><input type="checkbox" name="areas" value="Strategy during transition or growth"> Strategy during transition or growth</label>
+    <label><input type="checkbox" name="areas" value="Other"> Other (explain)</label>
+  </div>
+
+  <div class="option-other">
+    <input type="text" name="areas_other" placeholder="Optional" />
+  </div>
+</fieldset>
+
           <fieldset>
-            <legend>7. Which areas feel most relevant to the work you’re seeking? (Select up to 3)</legend>
+  <legend>8. How did you find your way to my work?</legend>
 
-            <label><input type="checkbox" name="areas" value="Executive judgment & decision-making"> Executive judgment & decision-making</label>
-            <label><input type="checkbox" name="areas" value="Leadership presence & authority"> Leadership presence & authority</label>
-            <label><input type="checkbox" name="areas" value="Governance, boards, or organizational structure"> Governance, boards, or organizational structure</label>
-            <label><input type="checkbox" name="areas" value="Boundaries, capacity, and sustainability"> Boundaries, capacity, and sustainability</label>
-            <label><input type="checkbox" name="areas" value="Strategy during transition or growth"> Strategy during transition or growth</label>
-
-            <label style="margin-top: .6rem;">
-              <input type="checkbox" name="areas" value="Other"> Other (explain)
-            </label>
-            <input type="text" name="areas_other" placeholder="Optional" />
-          </fieldset>
-
-          <fieldset>
-            <legend>8. How did you find your way to my work?</legend>
-            <label><input type="radio" name="source" value="Substack essays" required> Substack essays</label>
-            <label><input type="radio" name="source" value="The Kathryn Standard website"> The Kathryn Standard website</label>
-            <label><input type="radio" name="source" value="Referral"> Referral</label>
-            <label><input type="radio" name="source" value="Other"> Other</label>
-          </fieldset>
+  <div class="option-grid">
+    <label><input type="radio" name="source" value="Substack essays" required> Substack essays</label>
+    <label><input type="radio" name="source" value="The Kathryn Standard website"> The Kathryn Standard website</label>
+    <label><input type="radio" name="source" value="Referral"> Referral</label>
+    <label><input type="radio" name="source" value="Other"> Other</label>
+  </div>
+</fieldset>
 
           <label>
             9. Is there anything else that would be helpful to know at this stage?
