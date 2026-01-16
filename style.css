@@ -489,6 +489,24 @@ a {
   color: #8a857f;
   margin-top: 1.5rem;
 }
+/* WORK WITH KATHRYN — PRE-QUALIFICATION FORM */
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.1rem 1.25rem;
+  margin-top: 1.25rem;
+}
+
+.form-grid .full {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 720px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
 /* FOOTER */
 
