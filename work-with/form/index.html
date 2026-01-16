@@ -67,8 +67,11 @@
   </div>
 
   <!-- keep your fieldset 7, fieldset 8, question 9, disclaimer, submit button, etc. below -->
-         <fieldset>
-  <legend>7. Which areas feel most relevant to the work you’re seeking? (Select up to 3)</legend>
+       <p id="q7-label" class="fieldset-label">
+  7. Which areas feel most relevant to the work you’re seeking? (Select up to 3)
+</p>
+
+<fieldset class="fieldset-box" aria-labelledby="q7-label">
 
   <div class="option-grid">
     <label><input type="checkbox" name="areas" value="Executive judgment & decision-making"> Executive judgment & decision-making</label>
@@ -84,9 +87,11 @@
   </div>
 </fieldset>
 
-          <fieldset>
-  <legend>8. How did you find your way to my work?</legend>
+         <p id="q8-label" class="fieldset-label">
+  8. How did you find your way to my work?
+</p>
 
+<fieldset class="fieldset-box" aria-labelledby="q8-label">
   <div class="option-grid">
     <label><input type="radio" name="source" value="Substack essays" required> Substack essays</label>
     <label><input type="radio" name="source" value="The Kathryn Standard website"> The Kathryn Standard website</label>
