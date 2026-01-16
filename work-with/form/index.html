@@ -32,37 +32,41 @@
           <p>This form is a starting point for thoughtful introductions. It is not a commitment.</p>
         </div>
 
-       <form id="inquiry-form" class="form-card" novalidate>
-          <label>
-            1. Name
-            <input type="text" name="name" required />
-          </label>
+     <form id="inquiry-form" class="form-card" action="javascript:void(0);" method="post" novalidate>
 
-          <label>
-            2. Email
-            <input type="email" name="email" required />
-          </label>
+  <div class="form-grid">
+    <label>
+      1. Name
+      <input type="text" name="name" required />
+    </label>
 
-          <label>
-            3. Organization / Company
-            <input type="text" name="company" />
-          </label>
+    <label>
+      2. Email
+      <input type="email" name="email" required />
+    </label>
 
-          <label>
-            4. Current Role/Title
-            <input type="text" name="title" />
-          </label>
+    <label>
+      3. Organization / Company
+      <input type="text" name="company" />
+    </label>
 
-          <label>
-            5. Briefly describe the leadership context you’re navigating right now.
-            <textarea name="context" rows="4" required></textarea>
-          </label>
+    <label>
+      4. Current Role/Title
+      <input type="text" name="title" />
+    </label>
 
-          <label>
-            6. What prompted you to reach out at this moment?
-            <textarea name="prompt" rows="3" required></textarea>
-          </label>
+    <label class="full">
+      5. Briefly describe the leadership context you’re navigating right now.
+      <textarea name="context" rows="4" required></textarea>
+    </label>
 
+    <label class="full">
+      6. What prompted you to reach out at this moment?
+      <textarea name="prompt" rows="3" required></textarea>
+    </label>
+  </div>
+
+  <!-- keep your fieldset 7, fieldset 8, question 9, disclaimer, submit button, etc. below -->
           <fieldset>
             <legend>7. Which areas feel most relevant to the work you’re seeking? (Select up to 3)</legend>
 
